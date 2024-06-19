@@ -22,6 +22,11 @@ function Pokemon() {
         setPokemon(pokemon)
     }
 
+    // Initialize a pokemon to display once the app renders
+    useEffect(() => {
+        displayPokemon(2)
+    }, [])
+
     return (
         <div className=' flex items-center justify-between w-full'>
 
