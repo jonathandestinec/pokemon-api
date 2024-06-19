@@ -41,7 +41,7 @@ function Pokemon() {
     return (
 
         // Style them up
-        <div className=' md:flex block items-center justify-between md:w-3/5 w-4/5 ml-auto mr-auto poke-container h-4/5 bg-gray-900 bg-opacity-50 absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:p-10 p-5 pl-10 pr-10 rounded-lg ring-1 ring-gray-700'>
+        <div className=' md:flex block items-center justify-between md:w-3/5 w-4/5 ml-auto mr-auto poke-container md:h-4/5 h-5/6 bg-gray-900 bg-opacity-50 absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:p-10 p-5 pl-10 pr-10 rounded-lg ring-1 ring-gray-700'>
 
             {/* Display all the pokemons gotten ftom the fetchPokemons */}
 
