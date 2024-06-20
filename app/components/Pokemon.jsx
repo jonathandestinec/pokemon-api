@@ -20,6 +20,17 @@ function Pokemon() {
     const displayPokemon = async (id) => {
         const res = await fetch(`/api/pokemon/${id}`)
         const pokemon = await res.json()
+
+        // Remove acctive btn style
+        const allBtns = document.querySelectorAll(".poke-btn")
+        allBtns.forEach(btn => {
+            btn.classList.remove("text-lime-400")
+        })
+
+        // Add acctive btn style
+        const activeBtn = document.getElementById(`${id}`)
+        activeBtn.classList.add("text-lime-400")
+
         setPokemon(pokemon)
     }
 
@@ -31,11 +42,6 @@ function Pokemon() {
     const scrollBottomPokeList = () => {
         const pokeList = document.querySelector('.poke-list')
         pokeList.scrollTop += 100
-    }
-
-    const scrollTopPokeList = () => {
-        const pokeList = document.querySelector('.poke-list')
-        pokeList.scrollTop = 0
     }
 
     return (
@@ -54,7 +60,7 @@ function Pokemon() {
                     const id = pokemon.url.split("/")[6]
                     return (
                         <div key={id}>
-                            <button className=' w-max mb-5 font-mono text-lg underline underline-offset-8' onClick={() => {
+                            <button id={id} className="w-max mb-5 font-mono text-lg underline underline-offset-8 poke-btn" onClick={() => {
                                 displayPokemon(id)
                             }}>{pokemon.name}</button>
                         </div>
